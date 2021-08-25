@@ -1,6 +1,13 @@
+"""
+Modification of Erin Allard's course code 'Python Data Structures: Stacks, Queues, and Dequeues'
+"""
+
+
 class Stack:
 
     def __init__(self):
+        """Instantiate Stack() object
+        """
         self.items = []
 
     def add(self, item) -> None:
@@ -17,16 +24,23 @@ class Stack:
         """Remove and return the top item from the stack.
         The run-time for this method is O(1), as indexing is at constant time.
 
-        :return: the top item of the stack
+        :return: the top item of the stack if Stack is not empty
         """
         try:
             return self.items.pop()  # pop without any param will always return item at index -1
         except IndexError:
-            print('Oops! Your stack is empty, there is nothing to remove.')
+            print("Oops! Your stack is empty, there is nothing to remove.")
 
     def peek(self):
-        """Return the next item that can be removed (top of the stack)."""
-        return self.items[-1]
+        """Return the next item that can be removed (top of the stack) if the stack is non-empty.
+        The run-time for this method is O(1), as indexing is at constant time.
+
+        :return: the last/top-most item in the stack if the stack is non-empty
+        """
+        try:
+            return self.items[-1]
+        except IndexError:
+            print("There is nothing in your stack.")
 
     def size(self):
         """Return how many items are in the stack."""
