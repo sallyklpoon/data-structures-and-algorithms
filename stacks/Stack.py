@@ -14,8 +14,12 @@ class Stack:
         self.items.append(item)
 
     def pop(self):
-        """Remove the top item from the stack."""
-        self.items.pop()
+        """Remove and return the top item from the stack.
+        The run-time for this method is O(1), as indexing is at constant time.
+
+        :return: the top item of the stack
+        """
+        return self.items.pop()  # pop without any param will always return item at index -1
 
     def peek(self):
         """Return the next item that can be removed (top of the stack)."""
