@@ -42,10 +42,18 @@ class Stack:
         except IndexError:
             print("There is nothing in your stack.")
 
-    def size(self):
-        """Return how many items are in the stack."""
+    def size(self) -> int:
+        """Return how many items are in the stack.
+        This method runs in O(1) because finding length of list happens in constant time.
+
+        :return: an integer, the size/length of the stack
+        """
         return len(self.items)
 
     def is_empty(self) -> bool:
-        """Determine if the stack is empty."""
+        """Return true if Stack is empty, false if it is non-empty.
+        This method runs O(1), testing in equality happens in constant time.
+
+        :return: boolean, True if stack is empty, false if it is non-empty
+        """
         return self.items == []
