@@ -52,3 +52,11 @@ class Queue:
         :return: the item at the head of the queue
         """
         return self.items.popleft()
+
+    def __str__(self):
+        """
+        Return queue's items if printed.
+
+        :return: a String, the items in queue
+        """
+        return str(self.items)
