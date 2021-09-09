@@ -1,6 +1,6 @@
 """
 Python Data Structures
-Queue class using List
+queue class using List
 
 Not the best because de-queueing will take time as the indexes of the list must be re-adjusted
 """
@@ -10,7 +10,7 @@ class QueueList:
 
     def __init__(self):
         """
-        Instantiate a Queue class object.
+        Instantiate a queue class object.
         """
         self.items = []
 

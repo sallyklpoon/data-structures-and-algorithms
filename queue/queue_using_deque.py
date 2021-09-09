@@ -1,6 +1,6 @@
 """
-Python Data Structures - Queue
-Queue class using deque data structure built-in to Python library
+Python Data Structures - queue
+queue class using deque data structure built-in to Python library
 """
 
 from collections import deque
