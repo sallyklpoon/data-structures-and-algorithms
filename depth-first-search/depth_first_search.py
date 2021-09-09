@@ -23,12 +23,12 @@ def dfs(maze: list, start: tuple, goal: tuple) -> (list or None):
     """
     stack = Stack()
     stack.add(start)  # Add start to our stack
-    predecessors = {start: None}
+    predecessors = {start: None}    # Current position cannot have predecessor
 
     while stack:    # Stack not empty
         current_location = stack.pop()
         if current_location == goal:
-            return get_path(predecessors, start, goal)
+            return get_path(predecessors, start, goal)  # Done because we are at goal
         for direction in ["up", "right", "down", "left"]:
             row_offset, column_offset = OFFSETS()[direction]
             neighbour = (current_location[0] + row_offset, current_location[1] + row_offset)
