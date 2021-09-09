@@ -1,6 +1,5 @@
 """
 Given a string of bracket symbols, determine if the string is balanced.
-
 """
 
 import stack
@@ -17,7 +16,7 @@ def balanced_brackets(brackets: str) -> bool:
     open_brackets = "[{("
     bracket_pair = {"]": "[", "}": "{", ")": "("}
     given_brackets, evaluate_stack = stack.Stack(), stack.Stack()
-    given_brackets.items = [bracket for bracket in brackets]
+    given_brackets.items = list(brackets)
     while not given_brackets.is_empty():
         if given_brackets.peek() not in open_brackets:
             evaluate_stack.add(given_brackets.remove())
