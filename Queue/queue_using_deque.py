@@ -10,13 +10,38 @@ class Queue:
     def __init__(self):
         self.items = deque()
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
+        """
+        Indicate if the queue is empty.
+
+        :return: a boolean, true if queue is empty, false if the queue is not empty
+        """
         return not self.items
 
-    def size(self):
+    def size(self) -> int:
+        """
+        Give the size of the queue.
+
+        :return: an integer, the size of the queue
+        """
         return len(self.items)
 
-    def enqueue(self, item):
+    def peek(self):
+        """
+        Return the item at the head of the queue without deletion.
+
+        :return: item at the head of the queue
+        """
+        return self.items[0]
+
+    def enqueue(self, item) -> None:
+        """
+        Add item to queue.
+
+        :param item: an item
+        :postcondition: queue has item added to the end of it
+        :return: nothing
+        """
         self.items.append(item)
 
     def dequeue(self):
