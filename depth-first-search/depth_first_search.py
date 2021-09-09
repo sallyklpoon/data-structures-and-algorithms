@@ -11,8 +11,16 @@ def OFFSETS() -> dict:
     }
 
 
-def dfs(maze, start, goal):
+def dfs(maze: list, start: tuple, goal: tuple) -> (list or None):
+    """Return the first DFS solution to a maze given a start and end goal.
 
+    Code adapted from Robin Andrews.
+
+    :param maze: A list of coordinates within a maze
+    :param start: A tuple of coordinates
+    :param goal: A tuple of coordinates
+    :return: a list of the coordinates from start to goal of the path
+    """
     stack = Stack()
     stack.add(start)  # Add start to our stack
     predecessors = {start: None}
