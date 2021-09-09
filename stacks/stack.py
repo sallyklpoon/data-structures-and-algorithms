@@ -57,3 +57,12 @@ class Stack:
         :return: boolean, True if stack is empty, false if it is non-empty
         """
         return self.items == []
+
+    def __str__(self):
+        return str(self.items)
+
+
+if __name__ == "__main__":
+    s = Stack()
+    print(s.is_empty())
+    
