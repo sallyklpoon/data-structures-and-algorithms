@@ -20,7 +20,7 @@ class Stack:
         """
         self.items.append(item)
 
-    def remove(self):
+    def pop(self):
         """Remove and return the top item from the stack.
         The run-time for this method is O(1), as indexing is at constant time.
 
@@ -29,7 +29,7 @@ class Stack:
         try:
             return self.items.pop()  # pop without any param will always return item at index -1
         except IndexError:
-            print("Oops! Your stack is empty, there is nothing to remove.")
+            print("Oops! Your stack is empty, there is nothing to pop.")
 
     def peek(self):
         """Return the next item that can be removed (top of the stack) if the stack is non-empty.
@@ -65,4 +65,4 @@ class Stack:
 if __name__ == "__main__":
     s = Stack()
     print(s.is_empty())
-    
+

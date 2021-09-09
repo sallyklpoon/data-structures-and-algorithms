@@ -14,7 +14,7 @@ def reverse_string(message: str) -> str:
     original_stack.items = [character for character in message]
     output = ""
     while not original_stack.is_empty():
-        output += original_stack.remove()
+        output += original_stack.pop()
     return output
 
 

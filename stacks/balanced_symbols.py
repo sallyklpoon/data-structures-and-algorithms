@@ -19,10 +19,10 @@ def balanced_brackets(brackets: str) -> bool:
     given_brackets.items = list(brackets)
     while not given_brackets.is_empty():
         if given_brackets.peek() not in open_brackets:
-            evaluate_stack.add(given_brackets.remove())
+            evaluate_stack.add(given_brackets.pop())
         elif given_brackets.peek() == bracket_pair[evaluate_stack.peek()]:
-            given_brackets.remove()
-            evaluate_stack.remove()
+            given_brackets.pop()
+            evaluate_stack.pop()
         else:
             break
     return len(evaluate_stack.items) == 0
