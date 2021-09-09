@@ -14,6 +14,30 @@ class QueueList:
         """
         self.items = []
 
+    def is_empty(self) -> bool:
+        """
+        Indicate if the queue is empty.
+
+        :return: a boolean, true if queue is empty, false if the queue is not empty
+        """
+        return not self.items
+
+    def size(self) -> int:
+        """
+        Give the size of the queue.
+
+        :return: an integer, the size of the queue
+        """
+        return len(self.items)
+
+    def peek(self):
+        """
+        Return the item at the head of the queue without deletion.
+
+        :return: item at the head of the queue
+        """
+        return self.items[0]
+
     def enqueue(self, item):
         """
         Add passed item to queue.
@@ -34,4 +58,9 @@ class QueueList:
         self.items.pop(0)
 
     def __str__(self):
+        """
+        Return queue's items if printed.
+
+        :return: a String, the items in queue
+        """
         return str(self.items)
