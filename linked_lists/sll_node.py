@@ -62,3 +62,11 @@ class SllNode:
         :return: None, the current node with self.next updated
         """
         self.next = new_next
+
+    def is_last(self):
+        """
+        Return True if node is at the end of the SLL, False if it is not the last element in the SLL.
+
+        :return: Boolean. True if node is at end of SLL, else, False
+        """
+        return self.next is None
