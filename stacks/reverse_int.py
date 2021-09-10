@@ -30,8 +30,7 @@ def reverse(integer: int) -> int:
     :param integer: an Integer
     :return: an integer, the accepted integer parameter reversed
     """
-    original_num = Stack()
-    new_num_stack = Stack()
+    original_num, new_num_stack = Stack(), Stack()
     sign = False
     if integer < 0:
         sign = True
@@ -40,7 +39,6 @@ def reverse(integer: int) -> int:
     while not original_num.is_empty():
         new_num_stack.add(original_num.pop())
     new_num_int = int("".join(new_num_stack.items))
-
     if sign:
         return new_num_int * -1
     elif new_num_int not in range(-231, 230):
