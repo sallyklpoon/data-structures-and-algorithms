@@ -33,7 +33,20 @@ class Sll:
         self.head = new_node
 
     def add_rear(self, new_data):
+        """
+        Add a new node at the end of an SLL.
 
+        :param new_data: a data type
+        :return: None, a new node added to the end of the SLL
+        """
+        new_node = SllNode(new_data)
+        current_node = self.head
+        if current_node is None:
+            self.head = new_node
+            return
+        while current_node.next is not None:
+            current_node = current_node.next
+        current_node.set_next(new_node)
 
     def size(self):
         pass
@@ -43,3 +56,15 @@ class Sll:
 
     def remove(self, data):
         pass
+
+
+if __name__ == '__main__':
+    my_sll = Sll()
+    node1 = SllNode(1)
+    node2 = SllNode(2)
+    node3 = SllNode(3)
+    my_sll.add_rear(node1)
+    print(my_sll)
+    my_sll.add_rear(node2)
+    print(my_sll)
+    print(my_sll.head.next)
