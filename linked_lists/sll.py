@@ -52,6 +52,8 @@ class Sll:
         """
         Return the size of the SLL.
 
+        Time complexity is O(n) because every Node in the Linked List must be visited.
+
         :return: an integer, the size of the SLL
         """
         current_node = self.head
@@ -64,7 +66,21 @@ class Sll:
         return size
 
     def search(self, data):
-        pass
+        """
+        Return true if data searched is found in the SLL, else, return False.
+
+        :param data: a data type
+        :return: Boolean, True if the data indicated is found in linked list, else, False
+        """
+        if self.head is None:
+            return "Linked List is empty."
+        current_node = self.head
+        while current_node is not None:
+            if current_node.data == data:
+                return True
+            else:
+                current_node = current_node.get_next()
+        return False
 
     def remove(self, data):
         pass
