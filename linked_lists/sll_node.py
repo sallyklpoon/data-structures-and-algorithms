@@ -17,6 +17,14 @@ class SllNode:
         self.data = data
         self.next = None
 
+    def __repr__(self):
+        """
+        Return printable representation of the node.
+
+        :return: String
+        """
+        return f"SLLNode object: data={self.data}"
+
     def get_data(self):
         """
         Return the data of the node.
