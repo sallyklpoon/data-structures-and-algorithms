@@ -70,3 +70,5 @@ class SllNode:
         :return: Boolean. True if node is at end of SLL, else, False
         """
         return self.next is None
+
+

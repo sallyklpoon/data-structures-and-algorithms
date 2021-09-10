@@ -3,6 +3,7 @@ Implement single linked-list class.
 """
 from sll_node import SllNode
 
+
 class Sll:
 
     def __init__(self):
@@ -44,8 +45,8 @@ class Sll:
         if current_node is None:
             self.head = new_node
             return
-        while current_node.next is not None:
-            current_node = current_node.next
+        while current_node.get_next() is not None:
+            current_node = current_node.get_next()
         current_node.set_next(new_node)
 
     def size(self):
@@ -83,18 +84,47 @@ class Sll:
         return False
 
     def remove(self, data):
-        pass
+        """
+        Remove the first instance of a node containing passed data parameter from Linked List.
+
+        Time complexity O(n) because worst case is to reach n max Linked List length.
+
+        :param data: a data type
+        :return: None, removes a node
+        """
+        if self.head is None:
+            return "Linked List is empty."
+        elif self.search(data) is False:
+            return "Data not found in Linked List."
+        elif self.head.get_data() == data:
+            self.head = self.head.get_next()
+        else:
+            current_node = self.head
+            while current_node is not None:
+                if current_node.next.data == data:
+                    remove_node = current_node.get_next()
+                    current_node.set_next(remove_node.get_next())
+                    return
+                current_node = current_node.get_next()
 
 
 if __name__ == '__main__':
     my_sll = Sll()
-    node1 = SllNode(1)
-    node2 = SllNode(2)
-    node3 = SllNode(3)
-    my_sll.add_rear(node1)
-    print(my_sll)
-    my_sll.add_rear(node2)
-    print(my_sll)
-    print(my_sll.head.next)
+    print(my_sll.remove(14))
+    my_sll.add_front(33)
+    my_sll.remove(33)
+    print(my_sll.is_empty())
+    my_sll.add_rear(1)
+    my_sll.remove(1)
+    print(my_sll.is_empty())
+    my_sll.add_rear(1)
+    my_sll.add_rear(2)
+    my_sll.add_rear(3)
     print(my_sll.size())
-
+    my_sll.remove(2)
+    print(my_sll.size())
+    print(my_sll.search(2))
+    print(my_sll.remove(5))
+    my_sll.remove(3)
+    print(my_sll.size())
+    print(my_sll.search(3))
