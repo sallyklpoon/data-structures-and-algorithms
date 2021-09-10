@@ -49,7 +49,19 @@ class Sll:
         current_node.set_next(new_node)
 
     def size(self):
-        pass
+        """
+        Return the size of the SLL.
+
+        :return: an integer, the size of the SLL
+        """
+        current_node = self.head
+        size = 0
+        if current_node is None:
+            return size
+        while current_node is not None:
+            size += 1
+            current_node = current_node.get_next()
+        return size
 
     def search(self, data):
         pass
@@ -68,3 +80,5 @@ if __name__ == '__main__':
     my_sll.add_rear(node2)
     print(my_sll)
     print(my_sll.head.next)
+    print(my_sll.size())
+
